@@ -35,5 +35,10 @@ export default function Header() {
     </header>
   );
 }
+<img
+  src="/logo.png.png"   // match your uploaded file name exactly
+  alt="TrueFit Recruits Logo"
+  style={{ height: "56px", display: "block" }}
+/>
 
 
