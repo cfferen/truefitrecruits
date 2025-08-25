@@ -10,8 +10,11 @@ export default function Header() {
       <div className="container header-inner">
         {/* Brand */}
         <div className="brand">
-          {/* Keep the filename exactly as uploaded */}
-          <img src="/logo.png.png" alt="TrueFit Recruits" />
+          <img
+            src="/logo.png.png"  // match the uploaded file name
+            alt="TrueFit Recruits"
+            style={{ height: "48px" }}
+          />
           <span className="brand-name">TrueFit Recruits</span>
         </div>
 
@@ -19,6 +22,7 @@ export default function Header() {
         <nav className="nav" aria-label="Primary">
           <Link href="/">Home</Link>
           <Link href="/sports">Sports</Link>
+          <Link href="/schools">Schools</Link> {/* <-- added */}
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
@@ -39,6 +43,7 @@ export default function Header() {
           <ul className="container" onClick={() => setOpen(false)}>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/sports">Sports</Link></li>
+            <li><Link href="/schools">Schools</Link></li> {/* <-- added */}
             <li><Link href="/about">About</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
@@ -47,13 +52,6 @@ export default function Header() {
     </header>
   );
 }
-<nav style={{ display: "flex", gap: "1.5rem" }}>
-  <Link href="/">Home</Link>
-  <Link href="/sports">Sports</Link>
-  <Link href="/schools">Schools</Link>  {/* <-- add this */}
-  <Link href="/about">About</Link>
-  <Link href="/contact">Contact</Link>
-</nav>
 
 
 
