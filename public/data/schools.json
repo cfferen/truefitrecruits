@@ -1,1 +1,123 @@
+[
+  {
+    "id": "adams-state",
+    "name": "Adams State University",
+    "city": "Alamosa",
+    "state": "CO",
+    "division": "NCAA DII",
+    "governingBody": "NCAA",
+    "conference": "RMAC",
+    "sports": ["lacrosse_men", "lacrosse_women", "soccer_men", "soccer_women"],
+    "lat": 37.4694,
+    "lng": -105.8700
+  },
+  {
+    "id": "adelphi",
+    "name": "Adelphi University",
+    "city": "Garden City",
+    "state": "NY",
+    "division": "NCAA DII",
+    "governingBody": "NCAA",
+    "conference": "NE10",
+    "sports": ["lacrosse_men", "lacrosse_women", "soccer_men", "soccer_women"],
+    "lat": 40.7268,
+    "lng": -73.6537
+  },
+  {
+    "id": "albion",
+    "name": "Albion College",
+    "city": "Albion",
+    "state": "MI",
+    "division": "NCAA DIII",
+    "governingBody": "NCAA",
+    "conference": "MIAA",
+    "sports": ["lacrosse_men", "lacrosse_women", "soccer_men", "soccer_women", "football_men"],
+    "lat": 42.2431,
+    "lng": -84.7530
+  },
+  {
+    "id": "american-intl",
+    "name": "American International College",
+    "city": "Springfield",
+    "state": "MA",
+    "division": "NCAA DII",
+    "governingBody": "NCAA",
+    "conference": "NE10",
+    "sports": ["lacrosse_women", "soccer_men", "soccer_women", "football_men"],
+    "lat": 42.1167,
+    "lng": -72.5400
+  },
+  {
+    "id": "bryant",
+    "name": "Bryant University",
+    "city": "Smithfield",
+    "state": "RI",
+    "division": "NCAA DI",
+    "governingBody": "NCAA",
+    "conference": "America East",
+    "sports": ["lacrosse_men", "lacrosse_women", "soccer_men", "soccer_women"],
+    "lat": 41.9202,
+    "lng": -71.5350
+  },
+  {
+    "id": "salisbury",
+    "name": "Salisbury University",
+    "city": "Salisbury",
+    "state": "MD",
+    "division": "NCAA DIII",
+    "governingBody": "NCAA",
+    "conference": "Coast-to-Coast",
+    "sports": ["lacrosse_men", "lacrosse_women", "soccer_men", "soccer_women", "football_men"],
+    "lat": 38.3464,
+    "lng": -75.6031
+  },
+  {
+    "id": "grand-valley",
+    "name": "Grand Valley State University",
+    "city": "Allendale",
+    "state": "MI",
+    "division": "NCAA DII",
+    "governingBody": "NCAA",
+    "conference": "GLIAC",
+    "sports": ["lacrosse_women", "soccer_men", "soccer_women"],
+    "lat": 42.9634,
+    "lng": -85.8889
+  },
+  {
+    "id": "keiser",
+    "name": "Keiser University",
+    "city": "West Palm Beach",
+    "state": "FL",
+    "division": "NAIA",
+    "governingBody": "NAIA",
+    "conference": "Sun Conference",
+    "sports": ["lacrosse_men", "lacrosse_women", "soccer_men", "soccer_women"],
+    "lat": 26.7153,
+    "lng": -80.0534
+  },
+  {
+    "id": "mesa-cc",
+    "name": "Mesa Community College",
+    "city": "Mesa",
+    "state": "AZ",
+    "division": "NJCAA",
+    "governingBody": "NJCAA",
+    "conference": "ACCAC",
+    "sports": ["soccer_men", "soccer_women"],
+    "lat": 33.4152,
+    "lng": -111.8315
+  },
+  {
+    "id": "mcla-colorado",
+    "name": "University of Colorado (MCLA)",
+    "city": "Boulder",
+    "state": "CO",
+    "division": "MCLA - DI",
+    "governingBody": "MCLA",
+    "conference": "RMLC",
+    "sports": ["lacrosse_men"],
+    "lat": 40.0076,
+    "lng": -105.2659
+  }
+]
 
