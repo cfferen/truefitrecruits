@@ -1,33 +1,50 @@
-"use client";
-import React from "react";
-import Link from "next/link";
-
-export default function Header() {
-  return (
-    <header className="site-header">
-      <div className="container nav">
-        <Link href="/" className="brand">
-          <img src="/logo.png" alt="TrueFit Recruits" className="brand-logo" />
-          <span className="brand-text">TrueFit Recruits</span>
-        </Link>
-
-        <nav className="nav-links">
-          <div className="nav-group">
-            <span className="nav-label">Sports ▾</span>
-            <div className="nav-menu">
-              <Link href="/sports/football">Football</Link>
-              <Link href="/sports/lacrosse">Lacrosse</Link>
-              <Link href="/sports/basketball">Basketball</Link>
-            </div>
-          </div>
-          <Link href="/about">About</Link>
-          <Link href="/resources">Resources</Link>
-          <Link href="/contact">Contact</Link>
-        </nav>
-
-        <Link href="/login" className="cta">Coaches Login</Link>
-      </div>
-    </header>
-  );
+:root {
+  --bg: #0f172a;      /* slate-900 */
+  --panel: #111827;   /* gray-900 */
+  --text: #e5e7eb;    /* gray-200 */
+  --muted: #9ca3af;   /* gray-400 */
+  --accent: #22c55e;  /* green-500 (TrueFIT vibe) */
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+header.site-header {
+  background: var(--panel);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+header .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-right: 1rem;
+}
+.brand-text { font-weight: 700; letter-spacing: 0.3px; }
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+}
+.nav-group { display: inline-flex; gap: 0.6rem; align-items: center; }
+.nav-label { color: var(--muted); font-size: 0.9rem; margin-right: 0.25rem; }
+.cta { margin-left: auto; }
