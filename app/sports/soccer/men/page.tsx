@@ -1,37 +1,30 @@
-import Link from "next/link";
-
 export const metadata = { title: "Men’s Soccer Recruits | TrueFit Recruits" };
 
 export default function MensSoccerPage() {
   return (
-    <main style={{ padding: "2rem", maxWidth: 960, margin: "0 auto" }}>
-      <header style={{ marginBottom: 24 }}>
-        <h1>Men’s Soccer Recruits</h1>
-        <p>Browse men’s soccer prospects with clips, club history, and academic info.</p>
-      </header>
+    <main style={{ padding: "2rem" }}>
+      <h1>Men’s Soccer Recruits</h1>
+      <p>Men’s soccer prospects with match film, stats, and contact details.</p>
 
-      <section style={{ marginBottom: 24 }}>
-        <h2>Athlete Spotlights</h2>
-        <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
-          <article style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: 14 }}>
-            <h3>Luis Martinez</h3>
-            <p>Forward · Club: Bay United · GPA 3.7</p>
-            <Link href="#">View Highlights →</Link>
-          </article>
-          <article style={{ border: "1px solid #e5e7eb", borderRadius: 10, padding: 14 }}>
-            <h3>Owen Patel</h3>
-            <p>Keeper · Clean sheets: 8 · GPA 3.6</p>
-            <Link href="#">View Highlights →</Link>
-          </article>
+      <section style={{ marginTop: "2rem" }}>
+        <h2>Featured Athletes</h2>
+        <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))" }}>
+          <div style={{ border: "1px solid #333", padding: "1rem", borderRadius: 8 }}>
+            <h3>Athlete Name</h3>
+            <p>Position: Forward</p>
+            <p>Class of 2026</p>
+          </div>
+          <div style={{ border: "1px solid #333", padding: "1rem", borderRadius: 8 }}>
+            <h3>Athlete Name</h3>
+            <p>Position: Midfielder</p>
+            <p>Class of 2026</p>
+          </div>
+          <div style={{ border: "1px solid #333", padding: "1rem", borderRadius: 8 }}>
+            <h3>Athlete Name</h3>
+            <p>Position: Defender</p>
+            <p>Class of 2026</p>
+          </div>
         </div>
-      </section>
-
-      <section>
-        <h2>Get Involved</h2>
-        <p>
-          Athletes: <Link href="/login">create your profile</Link>.{" "}
-          Coaches: <Link href="/login">log in</Link> to filter by position, club, and metrics.
-        </p>
       </section>
     </main>
   );
