@@ -13,3 +13,9 @@ export default function Header() {
     </header>
   );
 }
+<img 
+  src="/logo.png.png" 
+  alt="TrueFit Recruits Logo" 
+  className="brand-logo" 
+  style={{ height: "60px" }} 
+/>
