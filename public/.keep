@@ -1,2 +1,5 @@
 logo.png.png
-
+.brand img {
+  height: 70px; /* bigger logo */
+  width: auto;
+  display: block;
