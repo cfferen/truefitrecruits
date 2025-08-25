@@ -1,25 +1,7 @@
-"use client";
-
-import Link from "next/link";
-
-export default function Header() {
-  return (
-    <header className="site-header">
-      <div className="container nav">
-        {/* Brand / Logo */}
-        <Link href="/" className="brand">
-          <div className="brand-logo">TF</div>
-          TrueFit Recruits
-        </Link>
-
-        {/* Navigation Links */}
-        <nav className="nav-links">
-          <Link href="/">Home</Link>
-          <Link href="/sports">Sports</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-        </nav>
-      </div>
-    </header>
-  );
-}
+<div className="nav-menu">
+  <Link href="/sports/lacrosse/men">Men’s Lacrosse</Link>
+  <Link href="/sports/lacrosse/women">Women’s Lacrosse</Link>
+  <Link href="/sports/football/men">Men’s Football</Link>
+  <Link href="/sports/soccer/men">Men’s Soccer</Link>
+  <Link href="/sports/soccer/women">Women’s Soccer</Link>
+</div>
