@@ -16,9 +16,9 @@ export default function Header() {
       {/* Left side: Logo + Brand */}
       <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
         <img
-          src="/logo.png.png"
+          src="/logo.png.png"   // match uploaded file name
           alt="TrueFit Recruits Logo"
-          style={{ height: "50px" }}
+          style={{ height: "50px", display: "block" }}
         />
         <span style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#fff" }}>
           TrueFit Recruits
@@ -35,10 +35,6 @@ export default function Header() {
     </header>
   );
 }
-<img
-  src="/logo.png.png"   // match your uploaded file name exactly
-  alt="TrueFit Recruits Logo"
-  style={{ height: "56px", display: "block" }}
-/>
+
 
 
