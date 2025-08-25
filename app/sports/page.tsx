@@ -1,38 +1,22 @@
+// app/sports/page.tsx
+import Link from "next/link";
+
 export const metadata = {
   title: "Sports | TrueFit Recruits",
-  description: "Choose a sport & division.",
+  description: "Browse sports and divisions.",
 };
 
 export default function SportsIndexPage() {
   return (
     <main style={{ padding: "2rem" }}>
-      <h1>TrueFit Recruits</h1>
-      <p>Select a sport & division:</p>
-
-      <section style={{ marginTop: "2rem" }}>
-        <h2>Lacrosse</h2>
-        <p>
-          <a href="/sports/lacrosse/men">Men</a> ·{" "}
-          <a href="/sports/lacrosse/women">Women</a>
-        </p>
-      </section>
-
-      <section style={{ marginTop: "2rem" }}>
-        <h2>Football</h2>
-        <p>
-          <a href="/sports/football/men">Men</a>
-        </p>
-      </section>
-
-      <section style={{ marginTop: "2rem" }}>
-        <h2>Soccer</h2>
-        <p>
-          <a href="/sports/soccer/men">Men</a> ·{" "}
-          <a href="/sports/soccer/women">Women</a>
-        </p>
-      </section>
+      <h1>Sports</h1>
+      <ul>
+        <li><Link href="/sports/lacrosse/men">Men’s Lacrosse</Link></li>
+        <li><Link href="/sports/lacrosse/women">Women’s Lacrosse</Link></li>
+        <li><Link href="/sports/football/men">Men’s Football</Link></li>
+        <li><Link href="/sports/soccer/men">Men’s Soccer</Link></li>
+        <li><Link href="/sports/soccer/women">Women’s Soccer</Link></li>
+      </ul>
     </main>
   );
 }
-
-
