@@ -18,4 +18,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+/* app/globals.css */
+:root {
+  --bg: #0f172a; /* slate-900 */
+  --text: #e2e8f0; /* slate-200 */
+  --accent: #22c55e; /* green-500 */
+}
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 2rem 1.25rem; }
+.site-footer { padding: 2rem 1.25rem; opacity: .7; text-align: center; }
 
