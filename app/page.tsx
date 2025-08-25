@@ -1,30 +1,20 @@
-export const metadata = { title: "TrueFit Recruits" };
+// app/page.tsx
+export const metadata = {
+  title: 'TrueFit Recruits',
+  description: 'AI-assisted athlete recruiting. Launching soon.',
+};
 
 export default function HomePage() {
   return (
-    <main style={{ padding: "2rem" }}>
+    <main style={{ padding: '2rem' }}>
       <h1>TrueFit Recruits</h1>
-      <p>Select a sport & division:</p>
+      <p>Select a sport & division on the Sports page.</p>
 
-      <section style={{ display: "grid", gap: "1rem" }}>
-        <div>
-          <h2>Lacrosse</h2>
-          <a href="/sports/lacrosse/men">Men</a> ·{" "}
-          <a href="/sports/lacrosse/women">Women</a>
-        </div>
-
-        <div>
-          <h2>Football</h2>
-          <a href="/sports/football/men">Men</a>
-          {/* Football (women) omitted by design */}
-        </div>
-
-        <div>
-          <h2>Soccer</h2>
-          <a href="/sports/soccer/men">Men</a> ·{" "}
-          <a href="/sports/soccer/women">Women</a>
-        </div>
-      </section>
+      <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem' }}>
+        <a href="/sports">Explore Sports</a>
+        <a href="/about">About</a>
+      </div>
     </main>
   );
 }
+
