@@ -1,14 +1,23 @@
-import React from 'react';
+// app/layout.tsx
+import "./globals.css";
+import React from "react";
 
 export const metadata = {
-  title: 'TrueFit Recruits',
-  description: 'AI-assisted athlete recruiting. Launching soon.',
+  title: "TrueFit Recruits",
+  description: "AI-assisted multi-sport recruiting platform",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body style={{ margin: 0 }}>{children}</body>
+      <body>
+        {/* You’ll add Header/Footer/Nav later */}
+        {children}
+      </body>
     </html>
   );
 }
