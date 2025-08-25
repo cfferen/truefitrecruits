@@ -47,6 +47,13 @@ export default function Header() {
     </header>
   );
 }
+<nav style={{ display: "flex", gap: "1.5rem" }}>
+  <Link href="/">Home</Link>
+  <Link href="/sports">Sports</Link>
+  <Link href="/schools">Schools</Link>  {/* <-- add this */}
+  <Link href="/about">About</Link>
+  <Link href="/contact">Contact</Link>
+</nav>
 
 
 
