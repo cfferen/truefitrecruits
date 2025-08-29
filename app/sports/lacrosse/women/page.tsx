@@ -1,29 +1,38 @@
+import Link from 'next/link';
+import athletes from '@/public/data/athletes.json';
+
 export const metadata = { title: "Women’s Lacrosse Recruits | TrueFit Recruits" };
 
 export default function WomensLacrossePage() {
-  return (
-    <main style={{ padding: "2rem" }}>
-      <h1>Women’s Lacrosse Recruits</h1>
-      <p>Top women’s lacrosse prospects — highlights, stats, and profiles.</p>
+  const filteredAthletes = athletes.filter(
+    (a) => a.sport === 'lacrosse' && a.gender === 'women'
+  );
 
-      <section style={{ marginTop: "2rem" }}>
+  return (
+    <main style={{ padding: '2rem' }}>
+      <h1>Women’s Lacrosse Recruits</h1>
+      <p>Discover standouts, film, and stats for women’s lacrosse prospects.</p>
+
+      <section style={{ marginTop: '2rem' }}>
         <h2>Featured Athletes</h2>
-        <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))" }}>
-          <div style={{ border: "1px solid #333", padding: "1rem", borderRadius: 8 }}>
-            <h3>Athlete Name</h3>
-            <p>Position: Attack</p>
-            <p>Class of 2026</p>
-          </div>
-          <div style={{ border: "1px solid #333", padding: "1rem", borderRadius: 8 }}>
-            <h3>Athlete Name</h3>
-            <p>Position: Midfield</p>
-            <p>Class of 2026</p>
-          </div>
-          <div style={{ border: "1px solid #333", padding: "1rem", borderRadius: 8 }}>
-            <h3>Athlete Name</h3>
-            <p>Position: Goalie</p>
-            <p>Class of 2026</p>
-          </div>
+        <div style={{
+          display: 'grid',
+          gap: '1rem',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))'
+        }}>
+          {filteredAthletes.map((athlete) => (
+            <div
+              key={athlete.id}
+              style={{ border: '1px solid #ccc', padding: '1rem', borderRadius: '8px' }}
+            >
+              <h3>{athlete.name}</h3>
+              <p><strong>Position:</strong> {athlete.position}</p>
+              <p><strong>Class of:</strong> {athlete.gradYear}</p>
+              <Link href={`/sports/lacrosse/women/${athlete.id}`}>
+                <strong>View Profile →</strong>
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
     </main>
