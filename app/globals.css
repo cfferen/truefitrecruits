@@ -1,28 +1,5 @@
-.site-header {
-  background: #0d1b2a; /* navy background */
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+body {
+  background-color: #002366;
+  color: #FFD700;
+  font-family: 'Segoe UI', sans-serif;
 }
-
-.brand-name {
-  font-weight: 800;
-  font-size: 1.75rem;
-  color: #fbbf24; /* gold for text */
-}
-
-.nav-links a {
-  color: #fbbf24; /* gold links */
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: #1e3a8a; /* royal blue hover */
-}
-
-
-
-
