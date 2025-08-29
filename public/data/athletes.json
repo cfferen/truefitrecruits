@@ -1,0 +1,22 @@
+[
+  {
+    "id": "jdoe123",
+    "name": "John Doe",
+    "sport": "football",
+    "position": "QB",
+    "gradYear": 2026,
+    "gender": "men",
+    "highlights": "https://www.youtube.com/embed/abc123",
+    "school": "Example High School"
+  },
+  {
+    "id": "asmith456",
+    "name": "Alex Smith",
+    "sport": "soccer",
+    "position": "MF",
+    "gradYear": 2027,
+    "gender": "women",
+    "highlights": "",
+    "school": "Northview High"
+  }
+]
