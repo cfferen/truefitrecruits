@@ -7,10 +7,10 @@ type School = {
   name: string;
   city: string;
   state: string;
-  division: string;        // e.g., "NCAA DI", "NCAA DII", "NAIA", "NJCAA", "MCLA - DI"
-  governingBody: string;   // NCAA | NAIA | NJCAA | MCLA | NCLL | Other
+  division: string;
+  governingBody: string;
   conference?: string;
-  sports: string[];        // e.g., ["lacrosse_men","soccer_women","football_men"]
+  sports: string[];
   lat?: number;
   lng?: number;
 };
@@ -43,14 +43,12 @@ export default function SchoolsPage() {
   const [sportFilter, setSportFilter] = useState("");
 
   useEffect(() => {
-    // fetch from the public JSON
     fetch("/data/schools.json", { cache: "no-store" })
       .then((r) => r.json())
       .then((data: School[]) => setSchools(data))
       .catch((e) => console.error(e));
   }, []);
 
-  // build distinct state list
   const allStates = useMemo(() => {
     const s = Array.from(new Set(schools.map((x) => x.state))).sort();
     return s;
@@ -74,16 +72,15 @@ export default function SchoolsPage() {
   }, [schools, q, stateFilter, divisionFilter, sportFilter]);
 
   return (
-    <div style={{ padding: "2rem 1.5rem", maxWidth: 1100, margin: "0 auto" }}>
+    <div style={{ background: "#ffffff", color: "#111", padding: "2rem 1.5rem", maxWidth: 1100, margin: "0 auto" }}>
       <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Search Schools</h1>
 
-      {/* Filters */}
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 160px 200px 220px",
           gap: "0.75rem",
-          marginBottom: "1rem"
+          marginBottom: "1.5rem"
         }}
       >
         <input
@@ -93,9 +90,10 @@ export default function SchoolsPage() {
           style={{
             padding: "0.6rem 0.75rem",
             borderRadius: 8,
-            border: "1px solid #2c375c",
-            background: "#0b1430",
-            color: "white"
+            border: "1px solid #ccc",
+            background: "#f0f0f0",
+            color: "#111",
+            fontSize: "0.95rem"
           }}
         />
 
@@ -139,21 +137,20 @@ export default function SchoolsPage() {
         </select>
       </div>
 
-      {/* Count */}
       <div style={{ marginBottom: "0.75rem", opacity: 0.85 }}>
         Showing <strong>{filtered.length}</strong> of {schools.length} schools
       </div>
 
-      {/* Results list */}
-      <div style={{ display: "grid", gap: "0.75rem" }}>
+      <div style={{ display: "grid", gap: "1rem" }}>
         {filtered.map((s) => (
           <div
             key={s.id}
             style={{
-              border: "1px solid #223160",
-              background: "#0a1430",
+              background: "#f5f5f5",
+              color: "#111",
               borderRadius: 12,
-              padding: "0.9rem 1rem"
+              padding: "1rem",
+              boxShadow: "0 2px 5px rgba(0,0,0,0.05)"
             }}
           >
             <div
@@ -180,11 +177,12 @@ export default function SchoolsPage() {
                   <span
                     key={sp}
                     style={{
-                      fontSize: 12,
-                      padding: "4px 8px",
-                      borderRadius: 999,
-                      border: "1px solid #2e4475",
-                      background: "#0f214a"
+                      fontSize: "0.8rem",
+                      padding: "4px 10px",
+                      borderRadius: "999px",
+                      background: "#0044cc",
+                      color: "#fff",
+                      fontWeight: 500
                     }}
                   >
                     {labelForSport(sp)}
@@ -211,7 +209,9 @@ function labelForSport(key: string) {
 const selectStyle: React.CSSProperties = {
   padding: "0.6rem 0.75rem",
   borderRadius: 8,
-  border: "1px solid #2c375c",
-  background: "#0b1430",
-  color: "white"
+  border: "1px solid #ccc",
+  background: "#f0f0f0",
+  color: "#111",
+  fontSize: "0.95rem"
 };
+
