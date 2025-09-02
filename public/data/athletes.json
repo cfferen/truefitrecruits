@@ -1,22 +1,24 @@
 [
   {
-    "id": "jdoe123",
+    "id": 1,
     "name": "John Doe",
-    "sport": "football",
-    "position": "QB",
-    "gradYear": 2026,
-    "gender": "men",
-    "highlights": "https://www.youtube.com/embed/abc123",
-    "school": "Example High School"
+    "sport": "Football",
+    "position": "Quarterback",
+    "team": "TrueFit Academy",
+    "height": "6'2\"",
+    "weight": "210 lbs",
+    "gradYear": 2025,
+    "highlightsUrl": "https://example.com/highlights/john-doe"
   },
   {
-    "id": "asmith456",
-    "name": "Alex Smith",
-    "sport": "soccer",
-    "position": "MF",
-    "gradYear": 2027,
-    "gender": "women",
-    "highlights": "",
-    "school": "Northview High"
+    "id": 2,
+    "name": "Mike Smith",
+    "sport": "Lacrosse",
+    "position": "Attack",
+    "team": "TrueFit Lacrosse",
+    "height": "5'10\"",
+    "weight": "185 lbs",
+    "gradYear": 2024,
+    "highlightsUrl": "https://example.com/highlights/mike-smith"
   }
 ]
