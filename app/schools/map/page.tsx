@@ -1,51 +1,18 @@
-"use client";
+'use client';
 
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { useEffect, useState } from "react";
+import dynamic from 'next/dynamic';
+import 'leaflet/dist/leaflet.css';
 
-type School = {
-  id: string;
-  name: string;
-  city: string;
-  state: string;
-  division: string;
-  governingBody: string;
-  conference?: string;
-  sports: string[];
-  lat?: number;
-  lng?: number;
-};
+// Dynamically import MapContainer so it works with SSR
+const Map = dynamic(() => import('./components/Map'), { ssr: false });
 
 export default function SchoolMapPage() {
-  const [schools, setSchools] = useState<School[]>([]);
-
-  useEffect(() => {
-    fetch("/data/schools.json")
-      .then((r) => r.json())
-      .then((data: School[]) => setSchools(data));
-  }, []);
-
-  const center = [39.8283, -98.5795]; // Center of USA
-
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
-      <MapContainer center={center} zoom={4} style={{ height: "100%", width: "100%" }}>
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {schools
-          .filter((s) => s.lat && s.lng)
-          .map((s) => (
-            <Marker key={s.id} position={[s.lat!, s.lng!]}>
-              <Popup>
-                <strong>{s.name}</strong><br />
-                {s.city}, {s.state}<br />
-                {s.division}
-              </Popup>
-            </Marker>
-          ))}
-      </MapContainer>
+    <div className="p-6">
+      <h1 className="text-3xl font-bold mb-4">Map of Schools</h1>
+      <Map />
     </div>
   );
 }
+
 
