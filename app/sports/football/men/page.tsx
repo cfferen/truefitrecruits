@@ -1,42 +1,68 @@
-import Link from 'next/link';
-import athletes from '@/public/data/athletes.json';
+'use client';
 
-export const metadata = { title: "Men’s Football Recruits | TrueFit Recruits" };
+import { useEffect, useState } from 'react';
 
-export default function MensFootballPage() {
-  const filteredAthletes = athletes.filter(
-    (a) => a.sport === 'football' && a.gender === 'men'
-  );
+interface Athlete {
+  id: number;
+  name: string;
+  sport: string;
+  position: string;
+  team: string;
+  height: string;
+  weight: string;
+  gradYear: number;
+  highlightsUrl: string;
+}
+
+export default function FootballAthletes() {
+  const [athletes, setAthletes] = useState<Athlete[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchAthletes() {
+      try {
+        const res = await fetch('/data/athletes.json');
+        if (!res.ok) throw new Error('Failed to load athlete data');
+        const data = await res.json();
+
+        const footballPlayers = data.filter((a: Athlete) => a.sport === 'Football');
+        setAthletes(footballPlayers);
+      } catch (err: any) {
+        console.error(err);
+        setError('Could not load athlete data. Please try again later.');
+      }
+    }
+
+    fetchAthletes();
+  }, []);
+
+  if (error) {
+    return <div className="text-red-500">{error}</div>;
+  }
+
+  if (athletes.length === 0) {
+    return <div>Loading athletes...</div>;
+  }
 
   return (
-    <main style={{ padding: '2rem' }}>
-      <h1>Men’s Football Recruits</h1>
-      <p>Discover standouts, film, and stats for men’s football prospects.</p>
-
-      <section style={{ marginTop: '2rem' }}>
-        <h2>Featured Athletes</h2>
-        <div style={{
-          display: 'grid',
-          gap: '1rem',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))'
-        }}>
-          {filteredAthletes.map((athlete) => (
-            <div
-              key={athlete.id}
-              style={{ border: '1px solid #ccc', padding: '1rem', borderRadius: '8px' }}
-            >
-              <h3>{athlete.name}</h3>
-              <p><strong>Position:</strong> {athlete.position}</p>
-              <p><strong>Class of:</strong> {athlete.gradYear}</p>
-              <Link href={`/sports/football/men/${athlete.id}`}>
-                <strong>View Profile →</strong>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
-    </main>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Football Athletes</h1>
+      <ul className="space-y-4">
+        {athletes.map((athlete) => (
+          <li key={athlete.id} className="border p-4 rounded-md shadow">
+            <h2 className="text-xl font-semibold">{athlete.name}</h2>
+            <p>Position: {athlete.position}</p>
+            <p>Team: {athlete.team}</p>
+            <p>Graduation Year: {athlete.gradYear}</p>
+            <a href={athlete.highlightsUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+              Watch Highlights
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
+
 
 
